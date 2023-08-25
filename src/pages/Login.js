@@ -17,6 +17,7 @@ const Login = () => {
             alert('Enter Valid Information')
         }        
         if(json.success){
+            localStorage.setItem('authToken',json.token)
             navigate('/')
         }
     }

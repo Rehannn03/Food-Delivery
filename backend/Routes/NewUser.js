@@ -1,7 +1,9 @@
+require('dotenv').config()
 const express = require("express");
 const router = express.Router();
 const User = require("../model/User");
 const bcrypt=require('bcrypt')
+const jwt=require('jsonwebtoken')
 const { body, validationResult } = require("express-validator");
 router.post(
   "/createuser",
@@ -51,7 +53,14 @@ router.post(
         return res.status(400).json({ errors: {error:'Invalid Password'} });
       }
 
-      return res.json({success:true})
+      const userdata={
+        user:{
+          id:data.id
+        }
+      }
+
+      const token=jwt.sign(userdata,process.env.SECRET)
+      return res.json({success:true,token:token})
     } catch (error) {
       console.log(error);
       res.json({ success: false });
