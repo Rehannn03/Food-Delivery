@@ -1,10 +1,14 @@
-const card = () => {
+const Card = (props) => {
+
+  let options=props.option
+  let price=Object.keys(options)
+
   return (
     <div>
       <div className="card mt-3 " style={{ width: "18rem", maxHeight: "360px" }}>
-        <img src="https://img.freepik.com/free-photo/delicious-indian-food-tray_23-2148723505.jpg?size=626&ext=jpg&ga=GA1.2.1453477194.1692089197&semt=sph" className="card-img-top" alt="..." />
+        <img src={props.imgSrc} style={{objectFit:'fill',height:"200px"}}/>
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
+          <h5 className="card-title">{props.foodName}</h5>
           <p className="card-text">Content</p>
           <div className="container w-100">
             <select className="m-2 h-100 bg-secondary rounded">
@@ -17,10 +21,11 @@ const card = () => {
               })}
             </select>
             <select className="m-2 h-100 bg-secondary rounded">
-              <option value="half">Half</option>
-              <option value="half">Full</option>
+              {price.map((data)=>{return(
+                <option key={data} value={data}>{data}</option>)
+              })}
             </select>
-            <div className="d-inline fs-5">Total price</div>
+            <div className="d-inline fs-6">Total price</div>
           </div>
         </div>
       </div>
@@ -28,4 +33,4 @@ const card = () => {
   );
 };
 
-export default card;
+export default Card;

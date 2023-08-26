@@ -19,25 +19,21 @@ const navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav me-auto mb-2">
               <li className="nav-item">
-                <Link className="nav-link active fst-italic" aria-current="page" to="/">
+                <Link className="nav-link active  fs-5" aria-current="page" to="/">
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link fst-it" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link fst-it" to="/signup">
-                  Signup
-                </Link>
-              </li>
+              
               
               
             </ul>
+            <div className="d-flex">
+          <Link to='/login' className="btn bg-white text-primary mx-1 ">Login</Link>
+          <Link to='/Signup' className="btn bg-white text-primary mx-1 ">Sign Up</Link>
+
+            </div>
           </div>
         </div>
       </nav>

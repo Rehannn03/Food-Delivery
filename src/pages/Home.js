@@ -2,7 +2,11 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
 import Caraousel from '../components/Caraousel'
-const home = () => {
+import DisplayPage from "../components/DisplayPage";
+
+const Home = () => {
+
+    
     return (
         <div>
             <div>
@@ -12,7 +16,7 @@ const home = () => {
                 <Caraousel></Caraousel>
             </div>
             <div className="m-3">
-                <Card></Card>
+                <DisplayPage></DisplayPage>
             </div>
             <div>
                 <Footer></Footer>
@@ -23,6 +27,6 @@ const home = () => {
     );
 }
 
-export default home;
+export default Home;
 
 

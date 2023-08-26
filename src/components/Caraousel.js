@@ -5,22 +5,7 @@ const Footer = () => {
         id="carouselExampleFade"
         className="carousel slide carousel-fade" >
         <div className="carousel-inner" id="carousel" >
-          <div className="carousel-caption" style={{ zIndex: "10" }}>
-            <form class="form-inline d-flex  ">
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-outline-danger my-2 my-sm-0 text-white bg-danger"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
-          </div>
+          
           <div
             className="carousel-item active"
             style={{ filter: "brightness(30%)" }}

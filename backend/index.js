@@ -22,7 +22,8 @@ app.get('/',(req,res)=>{
 app.use(express.json())
 
 app.use('/api',require('./Routes/NewUser'))
-
+app.use('/api',require('./Routes/LoginUser'))
+app.use('/api',require('./Routes/Display'))
 app.listen(port,()=>{
     console.log('Port Started')
 })
