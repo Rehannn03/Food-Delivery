@@ -57,9 +57,9 @@ const DisplayPage = () => {
                             className="col-12 col-md-6 col-lg-3"
                           >
                             <Card
-                              foodName={Items.name}
+                              foodItem={Items}
                               option={Items.options[0]}
-                              imgSrc={Items.img}
+                              
                             ></Card>
                           </div>
                         );

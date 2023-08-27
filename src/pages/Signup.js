@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState} from "react";
+import { Link,useNavigate} from "react-router-dom";
 
 const Signup = () => {
     const [details,setDetails]=useState({name:'',email:'',password:'',address:''})
-    const handleSubmit= async (e)=>{
+    let navigate=useNavigate()
+    const HandleSubmit= async (e)=>{
         e.preventDefault()
         const response=await fetch('http://localhost:5000/api/createuser',{
             method:'POST',
@@ -13,6 +14,7 @@ const Signup = () => {
         
         const json=await response.json()
         console.log(json)
+        navigate('/')
         if(!json.success){
             alert('Enter Valid Information')
         }
@@ -31,7 +33,7 @@ const Signup = () => {
     return (
         <div className="container">
             <div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={HandleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name</label>
                         <input id="name" className="form-control"  name='name' value={details.name} onChange={onChange} autoComplete="off" />
